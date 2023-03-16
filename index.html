@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script defer src="script.js"></script>
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <main class="calculator">
+      <header>
+        <h1>calc</h1>
+        <div class="theme-select">
+          <div class="labels">
+            <label for="theme-1">1</label>
+            <label for="theme-2">2</label>
+            <label for="theme-3">3</label>
+          </div>
+          <div class="inputs">
+            <input class="active" type="radio" name="theme" id="theme-1" />
+            <input type="radio" name="theme" id="theme-2" />
+            <input type="radio" name="theme" id="theme-3" />
+          </div>
+          <h2>theme</h2>
+        </div>
+      </header>
+      <div class="output"></div>
+      <div class="keyboard">
+        <button class="key" value="7">7</button>
+        <button class="key" value="8">8</button>
+        <button class="key" value="9">9</button>
+        <button class="key del-reset" value="">del</button>
+        <button class="key" value="4">4</button>
+        <button class="key" value="5">5</button>
+        <button class="key" value="6">6</button>
+        <button class="key operator" value="+">+</button>
+        <button class="key" value="1">1</button>
+        <button class="key" value="2">2</button>
+        <button class="key" value="3">3</button>
+        <button class="key operator" value="-">-</button>
+        <button class="key dot" value=",">.</button>
+        <button class="key" value="0">0</button>
+        <button class="key operator" value="/">/</button>
+        <button class="key operator" value="*">x</button>
+        <button class="key del-reset" value="">reset</button>
+        <button class="key equal" value="=">=</button>
+      </div>
+    </main>
+    <footer class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/rStrzelczyk98" target="_blank"
+          >Robert Strzelczyk</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>

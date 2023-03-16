@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+:root {
+  --theme-1-main-bg: #3a4764;
+  --theme-1-toggle-bg: #232c43;
+  --theme-1-screen-bg: #182034;
+  --theme-1-del-key-bg: #637097;
+  --theme-1-del-key-shadow: #404e72;
+  --theme-1-equal-key-bg: #d03f2f;
+  --theme-1-equal-key-shadow: #93261a;
+  --theme-1-num-key-bg: #eae3dc;
+  --theme-1-num-key-shadow: #b4a597;
+  --theme-1-num-text: #444b5a;
+  --theme-1-text: #ffffff;
+  --theme-2-main-bg: #e6e6e6;
+  --theme-2-toggle-bg: #d1cccc;
+  --theme-2-screen-bg: #ededed;
+  --theme-2-del-key-bg: #377f86;
+  --theme-2-del-key-shadow: #1b5f65;
+  --theme-2-equal-key-bg: #ca5502;
+  --theme-2-equal-key-shadow: #893901;
+  --theme-2-num-key-bg: #e5e4e1;
+  --theme-2-num-key-shadow: #a69d91;
+  --theme-2-num-text: #35352c;
+  --theme-2-text: #ffffff;
+  --theme-3-main-bg: #160628;
+  --theme-3-toggle-bg: #1d0934;
+  --theme-3-del-key-bg: #58077d;
+  --theme-3-del-key-shadow: #bc15f4;
+  --theme-3-equal-key-bg: #00e0d1;
+  --theme-3-equal-key-shadow: #6cf9f2;
+  --theme-3-num-key-bg: #341c4f;
+  --theme-3-num-key-shadow: #871c9c;
+  --theme-3-num-text: #ffe53d;
+  --theme-3-del-text: #ffffff;
+  --theme-3-equal-text: #1b2428;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  transition: background-color 250ms linear;
+}
+.calculator {
+  width: 100%;
+  max-width: 40rem;
+  padding: 1rem;
+}
+.calculator header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.75rem 1.75rem;
+}
+h1 {
+  font-size: 1.5rem;
+}
+.theme-select {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3125rem;
+}
+.labels {
+  grid-column: 2/-1;
+}
+.inputs {
+  grid-column: 2/-1;
+}
+h2 {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.labels {
+  font-size: 0.625rem;
+  display: flex;
+  justify-content: space-around;
+}
+.labels label {
+  text-align: center;
+  padding-inline: 0.25rem;
+}
+.inputs {
+  padding: 0.25rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+input {
+  border: none;
+  appearance: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 2rem;
+  opacity: 0;
+}
+.theme-select input.active {
+  opacity: 1;
+}
+label:is(:hover),
+input:is(:hover) {
+  cursor: pointer;
+}
+
+.output {
+  min-height: 3.8125rem;
+  border-radius: 0.5rem;
+  text-align: right;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.keyboard {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 0.75rem;
+  row-gap: 1rem;
+}
+.key {
+  outline: transparent;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding-block: 1rem 0.75rem;
+}
+.key:is(:hover) {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+.key.del-reset,
+.key.equal {
+  font-size: 1.125rem;
+}
+.key:nth-last-of-type(3) {
+  text-transform: lowercase;
+}
+.key:nth-last-of-type(2) {
+  grid-column: 1/3;
+}
+.key:last-of-type {
+  grid-column: 3/-1;
+}
+
+.attribution {
+  align-self: end;
+}
+.attribution p {
+  padding-block: 1rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.attribution a:is(:link, :visited) {
+  text-decoration: none;
+}
+.attribution a:is(:hover, :active) {
+  text-decoration: underline;
+}
+
+/* THEME 1 */
+body.theme-1 {
+  background-color: var(--theme-1-main-bg);
+}
+.theme-1 .calculator {
+  color: var(--theme-1-text);
+}
+.theme-1 .inputs {
+  background-color: var(--theme-1-toggle-bg);
+}
+.theme-1 input {
+  background-color: var(--theme-1-equal-key-bg);
+}
+.theme-1 .output {
+  background-color: var(--theme-1-screen-bg);
+}
+.theme-1 .keyboard {
+  background-color: var(--theme-1-toggle-bg);
+}
+.theme-1 .key {
+  color: var(--theme-1-num-text);
+  background-color: var(--theme-1-num-key-bg);
+  box-shadow: 0 0.25rem var(--theme-1-num-key-shadow);
+}
+.theme-1 .key.del-reset {
+  color: var(--theme-1-text);
+  background-color: var(--theme-1-del-key-bg);
+  box-shadow: 0 0.25rem var(--theme-1-del-key-shadow);
+}
+.theme-1 .key.equal {
+  color: var(--theme-1-text);
+  background-color: var(--theme-1-equal-key-bg);
+  box-shadow: 0 0.25rem var(--theme-1-equal-key-shadow);
+}
+.theme-1 .attribution p {
+  color: var(--theme-1-text);
+}
+.theme-1 .attribution a:is(:link, :visited) {
+  color: var(--theme-1-equal-key-bg);
+}
+
+/* THEME 2 */
+body.theme-2 {
+  background-color: var(--theme-2-main-bg);
+}
+.theme-2 .calculator {
+  color: var(--theme-2-num-text);
+}
+.theme-2 .inputs {
+  background-color: var(--theme-2-toggle-bg);
+}
+.theme-2 input {
+  background-color: var(--theme-2-equal-key-bg);
+}
+.theme-2 .output {
+  background-color: var(--theme-2-screen-bg);
+}
+.theme-2 .keyboard {
+  background-color: var(--theme-2-toggle-bg);
+}
+.theme-2 .key {
+  color: var(--theme-2-num-text);
+  background-color: var(--theme-2-num-key-bg);
+  box-shadow: 0 0.25rem var(--theme-2-num-key-shadow);
+}
+.theme-2 .key.del-reset {
+  color: var(--theme-2-text);
+  background-color: var(--theme-2-del-key-bg);
+  box-shadow: 0 0.25rem var(--theme-2-del-key-shadow);
+}
+.theme-2 .key.equal {
+  color: var(--theme-2-text);
+  background-color: var(--theme-2-equal-key-bg);
+  box-shadow: 0 0.25rem var(--theme-2-equal-key-shadow);
+}
+.theme-2 .attribution p {
+  color: var(--theme-2-num-text);
+}
+.theme-2 .attribution a:is(:link, :visited) {
+  color: var(--theme-2-equal-key-bg);
+}
+
+/* THEME 3 */
+body.theme-3 {
+  background-color: var(--theme-3-main-bg);
+}
+.theme-3 .calculator {
+  color: var(--theme-3-num-text);
+}
+.theme-3 .inputs {
+  background-color: var(--theme-3-toggle-bg);
+}
+.theme-3 input {
+  background-color: var(--theme-3-equal-key-bg);
+}
+.theme-3 .output {
+  background-color: var(--theme-3-toggle-bg);
+}
+.theme-3 .keyboard {
+  background-color: var(--theme-3-toggle-bg);
+}
+.theme-3 .key {
+  color: var(--theme-3-num-text);
+  background-color: var(--theme-3-num-key-bg);
+  box-shadow: 0 0.25rem var(--theme-3-num-key-shadow);
+}
+.theme-3 .key.del-reset {
+  color: var(--theme-3-del-text);
+  background-color: var(--theme-3-del-key-bg);
+  box-shadow: 0 0.25rem var(--theme-3-del-key-shadow);
+}
+.theme-3 .key.equal {
+  color: var(--theme-3-equal-text);
+  background-color: var(--theme-3-equal-key-bg);
+  box-shadow: 0 0.25rem var(--theme-3-equal-key-shadow);
+}
+.theme-3 .attribution p {
+  color: var(--theme-3-num-text);
+}
+.theme-3 .attribution a:is(:link, :visited) {
+  color: var(--theme-3-equal-key-bg);
+}
