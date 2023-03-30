@@ -4,6 +4,8 @@ const body = document.querySelector("body");
 const toggle = document.querySelector(".inputs");
 const themes = document.querySelectorAll('input[type="radio"]');
 const keyboard = document.querySelector(".keyboard");
+let str = "";
+let n = false;
 
 toggle.addEventListener("click", function (e) {
   if (!e.target.classList.contains("active") && e.target.type === "radio") {
@@ -21,7 +23,6 @@ window.addEventListener("load", function (e) {
   ) {
     themes.forEach((el) => el.classList.remove("active"));
     themes[2].classList.add("active");
-    body.className = "";
     body.classList.add(`${themes[2].id}`);
   } else if (
     this.matchMedia &&
@@ -29,19 +30,15 @@ window.addEventListener("load", function (e) {
   ) {
     themes.forEach((el) => el.classList.remove("active"));
     themes[1].classList.add("active");
-    body.className = "";
     body.classList.add(`${themes[1].id}`);
   } else {
     themes.forEach((el) => el.classList.remove("active"));
     themes[0].classList.add("active");
-    body.className = "";
     body.classList.add(`${themes[0].id}`);
   }
-  // body.classList.remove("hidden");
+  body.classList.remove("hidden");
 });
 
-let str = "";
-let n = false;
 keyboard.addEventListener("click", function (e) {
   const output = document.querySelector(".output");
   if (!e.target.classList.contains("key")) return;
